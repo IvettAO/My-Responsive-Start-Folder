@@ -20,25 +20,33 @@ body {
   color: $FontColor;
 }
 #headerWrapper {
-  background-color: #abc;
+  background-color: $SecondaryColor;
   color: $SecondaryColor;
 }
 
 header {
   display: flex;
-  align-items: flex-end;
-  padding: 1rem $gutter;
-  gap: 8px;
-  h1 {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: $normalWeight;
-    color: #113047;
+  justify-content: space-around;
+  align-items: center;
+  div {
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem $gutter;
+    gap: 8px;
+    h1 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: $normalWeight;
+      color: $FontColor;
+    }
+  }
+  a {
+    color: $FontColor;
   }
 }
 
 #navWrapper {
-  background-color: #113044;
+  background-color: $FontColor;
 }
 
 nav {
@@ -47,28 +55,65 @@ nav {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-direction: column;
     li {
       flex: 1;
+      border: solid 1px $SecondaryColor;
     }
-  }
-  li.active {
-    background-color: #b02a29;
   }
   a {
     display: block;
     padding: 0.75rem;
-    color: white;
+    color: $SecondaryColor;
     text-align: center;
     text-decoration: none;
     &:hover {
       color: $SecondaryColor;
     }
   }
+  li.active {
+    background-color: $PrimaryColor;
+    a {
+      color: $FontColor;
+    }
+  }
+}
+
+main {
+  margin: 0 1rem;
+  h1 {
+    color: $PrimaryColor;
+  }
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    div {
+      position: relative;
+      margin: 1rem;
+      background-color: $PrimaryColor;
+      border-radius: 20px;
+      h2 {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: $PrimaryColor;
+        padding: 10px;
+        text-align: center;
+        border-radius: 0 0 20px 20px;
+        margin: 0;
+      }
+      img {
+        border-radius: 20px;
+      }
+    }
+  }
 }
 
 // begin the footer
 #footerWrapper {
-  background-color: #113044;
+  background-color: $SecondaryColor;
 }
 footer {
   padding: 0.5rem $gutter;

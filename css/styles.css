@@ -329,29 +329,37 @@ body {
   height: 100%;
   font-family: "Josefin Sans", serif;
   font-weight: 500;
-  color: #113047;
+  color: #f7e0ba;
 }
 
 #headerWrapper {
-  background-color: #abc;
-  color: #739ab9;
+  background-color: #40002b;
+  color: #40002b;
 }
 
 header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header div {
   display: flex;
   align-items: flex-end;
   padding: 1rem 16px;
   gap: 8px;
 }
-header h1 {
+header div h1 {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 500;
-  color: #113047;
+  color: #f7e0ba;
+}
+header a {
+  color: #f7e0ba;
 }
 
 #navWrapper {
-  background-color: #113044;
+  background-color: #f7e0ba;
 }
 
 nav ul {
@@ -359,26 +367,62 @@ nav ul {
   padding: 0;
   margin: 0;
   display: flex;
+  flex-direction: column;
 }
 nav ul li {
   flex: 1;
-}
-nav li.active {
-  background-color: #b02a29;
+  border: solid 1px #40002b;
 }
 nav a {
   display: block;
   padding: 0.75rem;
-  color: white;
+  color: #40002b;
   text-align: center;
   text-decoration: none;
 }
 nav a:hover {
-  color: #739ab9;
+  color: #40002b;
+}
+nav li.active {
+  background-color: #7b002c;
+}
+nav li.active a {
+  color: #f7e0ba;
+}
+
+main {
+  margin: 0 1rem;
+}
+main h1 {
+  color: #7b002c;
+}
+main section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main section div {
+  position: relative;
+  margin: 1rem;
+  background-color: #7b002c;
+  border-radius: 20px;
+}
+main section div h2 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #7b002c;
+  padding: 10px;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+  margin: 0;
+}
+main section div img {
+  border-radius: 20px;
 }
 
 #footerWrapper {
-  background-color: #113044;
+  background-color: #40002b;
 }
 
 footer {
@@ -394,14 +438,28 @@ footer p {
 @media only screen and (min-width: 35rem) {
   header {
     padding: 2rem 16px;
+    justify-content: space-between;
   }
-  header h1 {
+  header div h1 {
     font-size: 2rem;
+  }
+  nav ul {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  nav ul a {
+    text-align: left;
+  }
+  main section div {
+    flex-basis: 45%;
   }
 }
 @media only screen and (min-width: 60rem) {
-  header, nav, main, footer {
-    max-width: 60rem;
+  header, main, footer {
+    max-width: 75rem;
     margin: auto;
+  }
+  main section div {
+    flex-basis: 25%;
   }
 }/*# sourceMappingURL=styles.css.map */
